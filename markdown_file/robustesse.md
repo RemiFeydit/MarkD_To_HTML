@@ -14,7 +14,7 @@
 * et pas ça
 * c'est une liste
 
-[salut](http://quelquechose.com)
+http://quelquechose.com
 
 https://vpoulailleau.wordpress.com
 
