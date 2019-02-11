@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>site_statique</title>
+    <style>
+        a{
+            color: purple;
+            text-decoration: None;
+        }
+        body {
+            background-color: lightblue;
+        }
+        ul{
+            color: blue;
+            list-style: None;
+            text-align: center;
+        }
+    </style>
+</head>
+<body backgroud = >
+    <h1>Générateur de site statique</h1>
+
+<p>Ceci est un projet proposé à des étudiants en Python.</p>
+
+<h2>Qu'est-ce qu'un site statique</h2>
+
+<p>Un site internet statique est un site composé uniquement de fichiers présents dans un dossier :</p>
+
+<ul>
+<li>des fichiers HTML,</li>
+<li>des fichiers CSS,</li>
+<li>des fichiers JavaScript,</li>
+<li>des images,</li>
+<li>des vidéos,</li>
+<li>…</li>
+</ul>
+
+<p>Cela s'oppose aux sites internet dynamiques, où certains de ces fichiers sont générés à la volée par du logiciel, à partir par exemple de données dans une base de données.</p>
+
+<h2>Héberger un site statique</h2>
+
+<p>Héberger un site dynamique est plus complexe que pour un site statique, il faut en effet installer le logiciel qui va générer les fichiers à la volée. Par contre, héberger un site statique est relativement simple, il suffit d'avoir un petit serveur web qui met à disposition le dossier contenant les fichiers statiques.</p>
+
+<h3>Github</h3>
+
+<p>Github fournit un hébergement gratuit de site statique. Il suffit de créer un dépôt git avec Github, et de committer dans une branche spécifique. Votre site est alors accessible à l'adresse suivante : <a target="_blank" href="https://votre_login.github.io/votre_nom_de_depot/">https://votre<em>login.github.io/votre</em>nom<em>de</em>depot/</a></p>
+
+<p>Plus de renseignement sur :</p>
+
+<ul>
+<li><a target="_blank" href="https://pages.github.com/">https://pages.github.com/</a></li>
+<li><a target="_blank" href="https://www.christopheducamp.com/2013/12/21/demarrer-avec-pages-github/">https://www.christopheducamp.com/2013/12/21/demarrer-avec-pages-github/</a></li>
+<li><a target="_blank" href="https://developer.mozilla.org/fr/docs/Apprendre/Utiliser_les_pages_GitHub">https://developer.mozilla.org/fr/docs/Apprendre/Utiliser<em>les</em>pages_GitHub</a></li>
+</ul>
+
+<h3>Utiliser un serveur web</h3>
+
+<p>Des outils commes Apache ou Nginx permettent de rendre accessible votre site par internet ou intranet :</p>
+
+<ul>
+<li><a target="_blank" href="https://httpd.apache.org/docs/trunk/fr/getting-started.html">https://httpd.apache.org/docs/trunk/fr/getting-started.html</a></li>
+<li><a target="_blank" href="http://sametmax.com/servir-des-fichiers-statiques-avec-nginx/">http://sametmax.com/servir-des-fichiers-statiques-avec-nginx/</a></li>
+<li><a target="_blank" href="https://doc.ubuntu-fr.org/nginx">https://doc.ubuntu-fr.org/nginx</a></li>
+<li><a target="_blank" href="https://nginxconfig.io/">https://nginxconfig.io/</a></li>
+</ul>
+
+<p>Python vous fournit un serveur web minimaliste, par exemple pour aller sur <a target="_blank" href="http://localhost:8080/">http://localhost:8080/</a> et y voir le site statique dont les fichiers sont dans <code>./dossier_de_mon_site/</code>.</p>
+
+<p><code>
+python -m http.server 8080  --directory ./dossier_de_mon_site/
+</code></p>
+
+<h2>Génerer un site statique</h2>
+
+<p>Les fichiers compris par un navigateur internet sont aux formats HTML/CSS/JavaScript. Vous n'avez peut-être pas envie de taper du HTML quand vous écrivez un blog. Il serait pratique de générer les pages web à partir d'un format textuel simple, comme le markdown (<a target="_blank" href="https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf">https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf</a> ou <a target="_blank" href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet</a>), langage utilisé pour écrire le document que vous lisez actuellement (<a target="_blank" href="https://raw.githubusercontent.com/vpoulailleau/site_statique/master/README.md">https://raw.githubusercontent.com/vpoulailleau/site_statique/master/README.md</a>).</p>
+
+<p>Certains outils open-source le font déjà, dont certains connus et en Python :</p>
+
+<ul>
+<li><a target="_blank" href="https://blog.getpelican.com/">https://blog.getpelican.com/</a></li>
+<li><a target="_blank" href="https://www.getlektor.com/">https://www.getlektor.com/</a></li>
+<li><a target="_blank" href="https://www.mkdocs.org/">https://www.mkdocs.org/</a></li>
+<li><a target="_blank" href="https://github.com/eudicots/Cactus">https://github.com/eudicots/Cactus</a></li>
+<li><a target="_blank" href="http://www.sphinx-doc.org/en/master/">http://www.sphinx-doc.org/en/master/</a></li>
+<li><a target="_blank" href="https://www.getnikola.com/">https://www.getnikola.com/</a></li>
+</ul>
+
+<h2>Projet</h2>
+
+<p>Vous allez réaliser un outil convertissant un dossier de fichiers markdown et d'images en un autre dossier contenant les fichiers d'un site statique. Du HTML sera généré à partir du markdown, et cet HTML sera mélangé avec des modèles de pages web pour générer des pages toutes conformes au même modèle (par exemple avec le même logo, le même sommaire de site internet, le même fichier CSS référencé…).</p>
+
+<p>Les fichiers markdown peuvent être créés :</p>
+
+<ul>
+<li>avec Visual Studio Code</li>
+<li>avec <a target="_blank" href="https://github.com/ncornette/Python-Markdown-Editor">https://github.com/ncornette/Python-Markdown-Editor</a></li>
+<li>avec <a target="_blank" href="https://pandao.github.io/editor.md/en.html">https://pandao.github.io/editor.md/en.html</a></li>
+<li>avec <a target="_blank" href="https://dillinger.io/">https://dillinger.io/</a></li>
+<li>…</li>
+</ul>
+
+<p>Pour donner un ordre d'idée, la version la plus basique du projet peut être faite en moins de 100 lignes.</p>
+
+<h3>Réalisation d'une interface en ligne de commande</h3>
+
+<p>Vous allez réaliser un outil en ligne de commande pour générer les fichiers du site statique. Il prendra au moins comme paramètres :</p>
+
+<ul>
+<li><code>-i ./un_dossier</code> ou <code>--input-directory ./un_dossier</code> : le chemin du dossier de fichiers source (contenant les fichiers markdown)</li>
+<li><code>-o ./un_autre_dossier</code> ou <code>--output-directory ./un_autre_dossier</code> : le chemin du dossier où seront mis les fichiers générés pour le site statique
+<ul>
+<li>si le dossier existe déjà, libre à vous de soit l'effacer, soit écrire dedans pour faire des mises à jours (cela sera expliqué dans le mode d'emploi de votre outil)</li>
+<li>vous pouvez choisir la convention de nommage qui vous plaît pour les fichiers générés, par exemple vous pouvez utiliser comme préfixe le nom du fichier markdown correspondant (cela sera aussi expliqué)</li>
+</ul></li>
+<li><code>-t ./autre_dossier</code> ou <code>--template-directory ./autre_dossier</code> : éventuellement le dossier contenant des modèles de pages web à compléter</li>
+<li><code>-h</code> ou <code>--help</code> : pour afficher de l'aide pour exliquer les paramètres de la commande</li>
+</ul>
+
+<p>Vous pouvez éventuellement ajouter des paramètres comme :</p>
+
+<ul>
+<li>ce que vous voulez</li>
+<li><code>-k</code> ou <code>--kikoo-lol</code> qui ajoutera dans le texte des « kikoo », « lol », « mdr », « ptdr » ou qui répète des lettres comme dans Hellllo, et autres déformations du français (<a target="_blank" href="https://fr.wiktionary.org/wiki/kikoolol">https://fr.wiktionary.org/wiki/kikoolol</a>)</li>
+<li><code>-a</code> ou <code>--achtung</code> pour aider les allemands à lire nos blogs français. Si vous appliquez les règles décrites <a target="_blank" href="https://linuxfr.org/nodes/108129/comments/1642666">ici</a>, zela aidera dafantach no zami alemand dan la prononziation de notr langue et dan la kompréhenzion de no zékri</li>
+</ul>
+
+<p>Vous pouvez utiliser :</p>
+
+<ul>
+<li>sys.argv (mais je ne vous le conseille pas, <a target="_blank" href="https://docs.python.org/fr/3/library/sys.html#sys.argv">https://docs.python.org/fr/3/library/sys.html#sys.argv</a>)</li>
+<li>argparse (<a target="_blank" href="https://docs.python.org/fr/3/howto/argparse.html">https://docs.python.org/fr/3/howto/argparse.html</a>)</li>
+<li>click (<a target="_blank" href="https://click.palletsprojects.com/en/7.x/">https://click.palletsprojects.com/en/7.x/</a>)</li>
+</ul>
+
+<p>Il se peut donc que votre projet soit utilisé par exemple avec :</p>
+
+<p><code>bash
+python3.7 generateur.py --input-directory ./dossier_markdown --output-directory ./dossier_resultat/ --achtung -k
+</code></p>
+
+<h3>Conversion de markdown vers HTML</h3>
+
+<p>Vous devez au moins convertir les syntaxes suivantes :</p>
+
+<ul>
+<li><code>#</code>, un titre de niveau 1 en <code>&lt;h1&gt;</code></li>
+<li><code>##</code>, un titre de niveau 2 en <code>&lt;h2&gt;</code></li>
+<li><code>###</code>, un titre de niveau 3 en <code>&lt;h3&gt;</code></li>
+<li>Convertir les listes non ordonées en <code>&lt;ul&gt;</code> et <code>&lt;li&gt;</code></li>
+<li>Convertir les URL (<a target="_blank" href="http://quelquechose.com">http://quelquechose.com</a>) en <code>&lt;a href="http://quelquechose.com"&gt;http://quelquechose.com&lt;/a&gt;</code></li>
+<li><code>*un texte*</code>, un texte important en <code>&lt;em&gt;un texte&lt;/em&gt;</code></li>
+</ul>
+
+<p>Vous pouvez faire ces conversions en utilisant au choix :</p>
+
+<ul>
+<li>les fonctions de base de Python pour les chaînes de caractères</li>
+<li>les expressions régulières (<a target="_blank" href="https://docs.python.org/fr/3/library/re.html">https://docs.python.org/fr/3/library/re.html</a>)</li>
+<li>un package de la communauté
+<ul>
+<li><a target="_blank" href="<a href="https://github.com/Python-Markdown/markdown">https://github.com/Python-Markdown/markdown</a>"><a target="_blank" href="https://github.com/Python-Markdown/markdown">https://github.com/Python-Markdown/markdown</a></a></li>
+<li><a target="_blank" href="<a href="https://github.com/trentm/python-markdown2">https://github.com/trentm/python-markdown2</a>"><a target="_blank" href="https://github.com/trentm/python-markdown2">https://github.com/trentm/python-markdown2</a></a></li>
+</ul></li>
+</ul>
+
+<h3>Qualité du code</h3>
+
+<p>Vous veillerez à respecter :</p>
+
+<ul>
+<li>la PEP 8 :  <a target="_blank" href="https://www.python.org/dev/peps/pep-0008/">https://www.python.org/dev/peps/pep-0008/</a> (vous pouvez vous aider avec <a target="_blank" href="https://github.com/ambv/black">https://github.com/ambv/black</a> et <a target="_blank" href="https://github.com/hhatto/autopep8">https://github.com/hhatto/autopep8</a>)</li>
+<li>la PEP 20 : <a target="_blank" href="https://www.python.org/dev/peps/pep-0020/">https://www.python.org/dev/peps/pep-0020/</a></li>
+<li>plus de détails sur <a target="_blank" href="https://vpoulailleau.wordpress.com/2018/12/04/un-code-pythonique/">https://vpoulailleau.wordpress.com/2018/12/04/un-code-pythonique/</a></li>
+</ul>
+
+<h3>Rendu sur Github</h3>
+
+<p>Votre projet <strong>personnel</strong> Python sera posté sur Github et un lien vers le dépôt public sera fourni.</p>
+
+<p>À la racine de votre dépôt git se trouvera un fichier README.md qui expliquera comment fonctionne votre projet, comment l'utiliser, quel est sa licence…</p>
+
+<h3>Projet open-source</h3>
+
+<p>Vous pouvez faire un projet libre et open-source. Beaucoup de projets Python utilisent la license MIT ou BSD 3 clauses, ces licences sont faciles à lire et très permissives. Vous pouvez aussi utiliser une licence plus stricte comme la GPL qui impose que les versions modifiées de votre projet soient aussi open-source.</p>
+
+<p>Vous pouvez lire la licence BSD 3 clauses du projet <a target="_blank" href="https://github.com/vpoulailleau/simplelogging">https://github.com/vpoulailleau/simplelogging</a> à l'adresse suivante <a target="_blank" href="https://github.com/vpoulailleau/simplelogging/blob/master/LICENSE.">https://github.com/vpoulailleau/simplelogging/blob/master/LICENSE.</a></p>
+
+<p>Vous pouvez faire en sorte que votre projet soit installable par la communauté Python en le diffusant sur le Python Package Index (<a target="_blank" href="https://pypi.org/">https://pypi.org/</a>), comme par exemple <a target="_blank" href="https://pypi.org/project/simplelogging/.">https://pypi.org/project/simplelogging/.</a></p>
+
+<p>Pour vous aidez dans cette aventure, vous pouvez utiliser <a target="_blank" href="https://github.com/audreyr/cookiecutter-pypackage">https://github.com/audreyr/cookiecutter-pypackage</a> ou encore <a target="_blank" href="https://ep2015.europython.eu/conference/talks/less-known-packaging-features-and-tricks.">https://ep2015.europython.eu/conference/talks/less-known-packaging-features-and-tricks.</a></p>
+
+<h3>Mises à jour de l'énoncé</h3>
+
+<p>Il se peut que, suite à des questions reçues, l'énoncé soit mis à jour. La dernière version de l'énoncé est disponible ici : <a target="_blank" href="https://github.com/vpoulailleau/site_statique.">https://github.com/vpoulailleau/site<em>statique.</a> Vous pouvez voir son historique sur <a target="_blank" href="https://github.com/vpoulailleau/site_statique/commits/master.">https://github.com/vpoulailleau/site</em>statique/commits/master.</a></p>
+
+<h3>Objectifs</h3>
+
+<p>Il va de soi que se documenter, copier du code (dans le respect des licences), discuter avec d'autres codeurs est vivement recommandé pour progresser. Regardez comment font les autres, et faites à votre façon. Soyez capables d'expliquer ce que vous avez fait.</p>
+
+<p>Pour rappel toutefois, un code sans licence est par défaut protégé par le droit d'auteur, vous n'avez donc pas le droit de le copier, sauf avec un accord de l'auteur.</p>
+
+<h3>Évaluation</h3>
+
+<p>Le projet est adapté à tous les niveaux, une version basique est réalisable, mais le projet peut aller jusqu'à la réalisation d'un outil open-source rendu disponible à la communauté.</p>
+
+<p>Les critères d'évaluation sont les suivants :</p>
+
+<ul>
+<li>implication (visible entre autres par l'historique de votre dépôt git)</li>
+<li>respect de la PEP 8</li>
+<li>respect de la PEP 20</li>
+<li>qualité du fichier README.md</li>
+<li>réalisation en conformité avec les fonctionnalités de base de cette énoncé</li>
+<li>des points bonus si vous allez plus loin</li>
+</ul>
+
+<p>Vous pouvez vous faire une idée en utilisant le barême suivant : <a target="_blank" href="https://github.com/vpoulailleau/site_statique/blob/master/checklist.md.">https://github.com/vpoulailleau/site_statique/blob/master/checklist.md.</a></p>
+
+<p>Bon apprentissage, et bon projet.</p>
+
+<h2>Idées d'algorithme</h2>
+
+<h3>Ligne de commande</h3>
+
+<p>Commencez par mettre en place la ligne de commande qui acceptera les différents paramètres mentionnés :</p>
+
+<ul>
+<li>Affichage du message d'aide (argparse et click savent le générer en automatique)</li>
+<li>Affichage du nom des dossiers passés en paramètres de la ligne de commande</li>
+</ul>
+
+<h3>Génération des fichiers statiques</h3>
+
+<h4>Parcours du dossier de sources</h4>
+
+<p>Il va falloir faire un traitement pour chaque fichier markdown présent dans le dossier contenant les fichiers markdown. <a target="_blank" href="https://docs.python.org/fr/3/library/pathlib.html">Pathlib</a> et sa méthode <a target="_blank" href="https://docs.python.org/fr/3/library/pathlib.html#pathlib.Path.glob">glob</a> peuvent aider (cf <a target="_blank" href="https://vpoulailleau.wordpress.com/2019/01/15/utilisez-pathlib-plutot-quos-path-ou-glob/">https://vpoulailleau.wordpress.com/2019/01/15/utilisez-pathlib-plutot-quos-path-ou-glob/</a>).</p>
+
+<h4>Conversion markdown vers HTML</h4>
+
+<p>Les fichiers markdown sont des fichiers texte. Il faut les ouvrir, les lire, et générer le HTML correspondant.</p>
+
+<p>Le résultat de chaque conversion est stocké dans un fichier HTML dans le dossier qui contiendra les fichiers statiques (dossier fourni par la ligne de commande).</p>
+
+<p>Les premières conversions (les titres) peuvent facilement se réaliser avec la méthode <a target="_blank" href="https://docs.python.org/3/library/stdtypes.html#str.replace">replace</a> des chaines de caractères.</p>
+
+<p>Il est possible de passer par les <a target="_blank" href="https://docs.python.org/fr/3/library/re.html">expressions régulières</a>, vous pouvez même vous faire aider en utilisant cursive_re présenté sur <a target="_blank" href="https://vpoulailleau.wordpress.com/2018/11/29/des-expressions-regulieres-lisibles/.">https://vpoulailleau.wordpress.com/2018/11/29/des-expressions-regulieres-lisibles/.</a></p>
+
+<h4>Mécanisme de template</h4>
+
+<p>Le mécanisme de pages modèles le plus simple est le suivant :</p>
+
+<ul>
+<li>Vous créez une page HTML par défaut, et sans contenu, juste le sommaire, le logo, le chargement de CSS…</li>
+<li>À la place du contenu dans la page HTML, vous mettez le texte « REPLACE_ME »</li>
+<li>Quand vous générez une page HTML, vous ouvrez la page modèle, et vous remplacer « REPLACE_ME » par l'HTML que vous avez généré à partir du markdown</li>
+<li>Vous pouvez utiliser <a target="_blank" href="https://getbootstrap.com/">https://getbootstrap.com/</a> pour faire rapidement du HTML plus évolué (responsive design, menus, listes déroulantes, slide show…)</li>
+<li>Pour ceux qui veulent faire un mécanisme plus évolué de pages modèles, vous pouvez regarder <a target="_blank" href="http://jinja.pocoo.org/">http://jinja.pocoo.org/</a>, <a target="_blank" href="https://genshi.edgewall.org/">https://genshi.edgewall.org/</a>, <a target="_blank" href="https://www.makotemplates.org/">https://www.makotemplates.org/</a>, <a target="_blank" href="https://opensource.com/resources/python/template-libraries">https://opensource.com/resources/python/template-libraries</a></li>
+</ul>
+
+    
+</body>
+</html>
